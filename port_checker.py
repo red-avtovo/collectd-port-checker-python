@@ -59,7 +59,7 @@ class PortMonitor(object):
         try:
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             try:
-                s.connect((self.host, self.port))
+                s.connect((self.host, int(self.port)))
                 s.shutdown(2)
                 self.log_verbose("Success in connecting to listener at")
                 self.log_verbose('%s on port: %s' % (self.host, str(self.port)))
