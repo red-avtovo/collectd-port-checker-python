@@ -8,6 +8,7 @@ Data captured includes:
  * Port status
 
 [deniszh's Python ActiveMQ collectd plugin] (https://github.com/deniszh/collectd-activemq-python) - as inspiration.
+http://stackoverflow.com/questions/27834815/how-to-run-multiple-instances-of-python-plugin-in-collectd - was used as the template
 
 Install
 -------
@@ -31,6 +32,11 @@ Add the following to your collectd config
         Host "localhost"
         Port "8080"
       </Module>
+      
+      <Module port_checker>
+              Host "localhost"
+              Port "8081"
+            </Module>
     </Plugin>
 
 _It will try to create a socket connection to `<host>:<port>`_
