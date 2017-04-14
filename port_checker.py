@@ -81,6 +81,7 @@ def fetch_metrics(conf):
         try:
             s.connect((conf['host'], conf['port']))
             s.shutdown(2)
+            s.close()
             log_verbose(conf['verbose_logging'], "Success in connecting to listener at")
             log_verbose(conf['verbose_logging'], '%s on port: %s' % (conf['host'], str(conf['port'])))
             gauges.append((coded_name, 'status', 1))
